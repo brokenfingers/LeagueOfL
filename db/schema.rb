@@ -13,54 +13,56 @@
 
 ActiveRecord::Schema.define(version: 20151017070518) do
 
+  create_table "attributes", force: :cascade do |t|
+    t.integer  "champion_id"
+    t.string   "name"
+    t.decimal  "base_value"
+    t.decimal  "scale_rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attributes", ["champion_id"], name: "index_attributes_on_champion_id"
+
   create_table "champions", force: :cascade do |t|
-    t.string  "name"
-    t.string  "title"
-    t.string  "role"
-    t.decimal "health"
-    t.decimal "mana"
-    t.decimal "energy"
-    t.decimal "rage"
-    t.decimal "attack_range"
-    t.decimal "physical_attack"
-    t.decimal "magic_attack"
-    t.decimal "armor_penetration"
-    t.decimal "magic_penetration"
-    t.decimal "physical_defense"
-    t.decimal "magic_defense"
-    t.decimal "attack_speed"
-    t.decimal "cooldown_reduction"
-    t.decimal "critical_rate"
-    t.decimal "life_steal"
-    t.decimal "spell_vamp"
-    t.decimal "movespeed"
-    t.decimal "tenacity"
-    t.text    "image"
+    t.string   "name"
+    t.string   "title"
+    t.string   "role"
+    t.text     "story"
+    t.text     "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "identities", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "provider"
-    t.string  "provider_uid"
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "provider_uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "skills", force: :cascade do |t|
-    t.integer "champion_id"
-    t.string  "name"
-    t.decimal "physical_damage"
-    t.decimal "magic_damage"
-    t.decimal "true_damage"
-    t.text    "description"
-    t.decimal "scale_rate"
+    t.integer  "champion_id"
+    t.string   "name"
+    t.decimal  "physical_damage"
+    t.decimal  "magic_damage"
+    t.decimal  "true_damage"
+    t.text     "description"
+    t.decimal  "scale_rate"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "skills", ["champion_id"], name: "index_skills_on_champion_id"
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "summoner_name"
+    t.string   "name"
+    t.string   "summoner_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
