@@ -53,4 +53,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :champions, :only => [:index, :show]
+  
+  resources :users do
+    resources :champions, :only => [:new, :create, :update, :delete]
+  end
 end
