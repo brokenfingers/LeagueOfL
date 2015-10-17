@@ -53,6 +53,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'champions#index'
+  
   resources :champions, :only => [:index, :show]
   
   resources :users do

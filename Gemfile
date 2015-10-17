@@ -12,6 +12,11 @@ gem 'date_validator'            # datetime validations for ActiveRecord
 gem 'foreman'
 gem 'foreigner'			#foreign key support for rails
 gem 'turbolinks'
+gem 'sass'
+gem 'sass-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'uglifier', '>= 1.3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,14 +50,4 @@ group :production do
   gem 'pg'
   gem 'newrelic_rpm'
   gem 'rails_12factor'
-end
-
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass'
-  gem 'sass-rails'
-  gem 'bootstrap-sass'
-  gem 'uglifier', '>= 1.3.0'
 end

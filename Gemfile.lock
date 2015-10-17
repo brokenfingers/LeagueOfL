@@ -43,9 +43,8 @@ GEM
       json
     autotest-rails (4.2.1)
       ZenTest (~> 4.5)
-    bootstrap-sass (3.3.5.1)
-      autoprefixer-rails (>= 5.0.0.1)
-      sass (>= 3.3.0)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -266,8 +265,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   autotest-rails
-  bootstrap-sass
+  bootstrap-sass (~> 3.2.0)
   cucumber-rails
   cucumber-rails-training-wheels
   cucumber-timecop
