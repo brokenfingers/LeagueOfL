@@ -41,6 +41,7 @@ class InitialMigration < ActiveRecord::Migration
     create_table :users, :force => true do |t|
       t.string :name
       t.string :summoner_name
+      t.boolean :admin, :default => false
     end
     
     create_table :identities, :force => true do |t|
